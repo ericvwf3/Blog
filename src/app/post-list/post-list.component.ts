@@ -10,19 +10,19 @@ export class PostListComponent implements OnInit {
   posts: Array<Object> = [
     {
       title: 'Mon premier post',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo iste provident, incidunt quidem ipsam soluta vitae repellat quaerat dignissimos consequuntur! Labore, non harum minima voluptatem ipsa ratione tempora temporibus amet?',
       loveIts: 0,
       created_at: new Date()
     },
     {
       title: 'Mon deuxième post',
-      content: 'Inventore, numquam porro.',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo iste provident, incidunt quidem ipsam soluta vitae repellat quaerat dignissimos consequuntur! Labore, non harum minima voluptatem ipsa ratione tempora temporibus amet?',
       loveIts: 0,
       created_at: new Date()
     },
     {
       title: 'Encore un post',
-      content: 'Facilis, recusandae perspiciatis aperiam eveniet labore possimus',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo iste provident, incidunt quidem ipsam soluta vitae repellat quaerat dignissimos consequuntur! Labore, non harum minima voluptatem ipsa ratione tempora temporibus amet?',
       loveIts: 0,
       created_at: new Date()
     },
