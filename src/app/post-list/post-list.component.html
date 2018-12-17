@@ -1,3 +1,9 @@
-<p>
-  post-list works!
-</p>
+<ul class="list-group">
+
+  <app-post 
+    *ngFor="let p of posts"
+    [post] = "p"
+  ></app-post>
+  
+
+</ul>
