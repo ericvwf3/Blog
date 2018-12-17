@@ -4,7 +4,7 @@
                 'list-group-item-danger' : post.loveIts < 0
                 }">
 
-  <h3> {{ post.title }} <span class="float-right"> {{ post.date }} </span></h3>
+  <h3> {{ post.title }} <span class="float-right text-secondary font-italic small"> {{ post.created_at | date: "short"  }} </span></h3>
   
   <p> {{ post.content }} </p>
 
