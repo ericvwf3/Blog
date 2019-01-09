@@ -24,16 +24,18 @@ export class PostListComponent implements OnInit, OnDestroy {
     );
   }
 
-  onNewPost() {
-    this.router.navigate(['/posts', 'new']);
-  }
+ 
 
   onDeletePost(post: Post) {
     this.postsService.removePost(post);
   }
 
-  ngOnDestroy() {
+  onViewPost(id: number) {
+    this.router.navigate(['posts', 'item', id]);
+  }
 
+  ngOnDestroy() {
+    this.postsSubscription.unsubscribe();
   }
 
 }
