@@ -1,8 +1,7 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Post } from '../models/post.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostsService } from '../services/posts.service';
-
 
 @Component({
   selector: 'app-post-list-item',
@@ -13,33 +12,32 @@ export class PostListItemComponent implements OnInit {
 
   post: Post;
 
-  constructor(private route: ActivatedRoute, private router: Router, private postsServices: PostsService) { }
+  constructor(private route: ActivatedRoute, private postsService: PostsService,
+    private router: Router) { }
 
   ngOnInit() {
-    this.post = new Post ('', '');
+    this.post = new Post('', '');
     const id = this.route.snapshot.params['id'];
-    this.postsServices.getSinglePost(+id).then(
+    this.postsService.getSinglePost(+id).then(
       (post: Post) => {
         this.post = post;
       }
     );
   }
 
-  
   onLike() {
 
     this.post.loveIts++;
-    
+
   }
 
-  onDislike () {
+  onDislike() {
 
     this.post.loveIts--;
-    
+
   }
 
   onBack() {
     this.router.navigate(['/posts']);
-  } 
-
+  }
 }

@@ -36,7 +36,7 @@ export class PostsService {
   getSinglePost(id: number) {
     return new Promise(
       (resolve, reject) => {
-        firebase.database().ref('/books/' + id).once('value').then(
+        firebase.database().ref('/posts/' + id).once('value').then(
           (data: Datasnapshot) => {
             resolve(data.val());
           }, (error) => {
