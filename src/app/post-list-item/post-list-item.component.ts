@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Post } from '../models/post.model';
-import { ActivatedRoute, Router } from '@angular/router';
 import { PostsService } from '../services/posts.service';
 
 @Component({
@@ -10,20 +9,11 @@ import { PostsService } from '../services/posts.service';
 })
 export class PostListItemComponent implements OnInit {
 
-  post: Post;
+  @Input() post: Post;
 
-  constructor(private route: ActivatedRoute, private postsService: PostsService,
-    private router: Router) { }
+  constructor(private postsService: PostsService) {}
 
-  ngOnInit() {
-    this.post = new Post('', '');
-    const id = this.route.snapshot.params['id'];
-    this.postsService.getSinglePost(+id).then(
-      (post: Post) => {
-        this.post = post;
-      }
-    );
-  }
+  ngOnInit() {}
 
   onLike() {
 
@@ -37,7 +27,8 @@ export class PostListItemComponent implements OnInit {
 
   }
 
-  onBack() {
-    this.router.navigate(['/posts']);
+  onDeletePost(post: Post) {
+    this.postsService.removePost(post);
   }
+  
 }

@@ -12,7 +12,7 @@ import { Post } from '../models/post.model';
 })
 export class NewPostComponent implements OnInit {
 
- postNew : FormGroup;
+  postNew : FormGroup;
 
   constructor(private formBuilder: FormBuilder, private postsService: PostsService,
     private router: Router) { }
@@ -30,15 +30,10 @@ export class NewPostComponent implements OnInit {
 
   onSavePost() {
     const title = this.postNew.get('title').value;
-    const content = this.postNew.get('content').value;       
+    const content = this.postNew.get('content').value;      
     const postNew = new Post(title, content);
-    postNew.content = content;
     this.postsService.createNewPost(postNew);
     this.router.navigate(['/posts']);
   }
-
-  
-
-  
 
 }

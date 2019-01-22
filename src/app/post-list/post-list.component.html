@@ -1,16 +1,4 @@
-<div class="row">
-    <div class="col-xs-12">
-        <h2>Posts</h2>
-        <div class="list-group">
-            <button class="list-group-item" *ngFor="let post of posts; let i = index" (click)="onViewPost(i)">
-                <h3 class="list-group-item-heading">
-                    {{ post.title }}
-                    <button class="btn btn-default pull-right" (click)="onDeletePost(Post)">
-                        <span class="glyphicon glyphicon-minus"></span>
-                    </button>
-                </h3>
-                <p class="list-group-item-text">{{ post.content }}</p>
-            </button>
-        </div>
-    </div>
-</div>
+<ul class="list-group">
+  <app-post-list-item *ngFor="let post of posts; let i = index" [post]="post">
+  </app-post-list-item>
+</ul>
