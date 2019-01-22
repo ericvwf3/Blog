@@ -13,7 +13,7 @@ import { PostsService } from './services/posts.service';
 
 const appRoutes: Routes = [
   { path: 'posts', component: PostListComponent },
-  { path: 'posts/item/:id', component: PostListItemComponent },
+  { path: '', component: PostListComponent },
   { path: 'new', component: NewPostComponent },
   { path: '', redirectTo: 'post', pathMatch: 'full' },
   { path: '**', redirectTo: '' }
