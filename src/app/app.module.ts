@@ -13,9 +13,9 @@ import { PostsService } from './services/posts.service';
 
 const appRoutes: Routes = [
   { path: 'posts', component: PostListComponent },
-  { path: '', component: PostListComponent },
   { path: 'new', component: NewPostComponent },
-  { path: '', redirectTo: 'post', pathMatch: 'full' },
+  { path: '', component: PostListComponent },
+  { path: '', redirectTo: 'posts', pathMatch: 'full' },
   { path: '**', redirectTo: '' }
 ];
 @NgModule({

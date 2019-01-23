@@ -18,12 +18,14 @@ export class PostListItemComponent implements OnInit {
   onLike() {
 
     this.post.loveIts++;
+    this.postsService.savePosts();
 
   }
 
   onDislike() {
 
     this.post.loveIts--;
+    this.postsService.savePosts();
 
   }
 
