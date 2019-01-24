@@ -55,8 +55,8 @@ export class PostsService {
 
   removePost(post: Post) {
     const postIndexToremove = this.posts.findIndex(
-      (postE1)  => {
-        if(postE1 === post) {
+      (postEl) => {
+        if( postEl === post) {
           return true;
         }
       }
