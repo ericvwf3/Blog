@@ -48,7 +48,6 @@ export class PostsService {
         }
       }
     );
-    console.log(postIndexToRemove);
     this.posts.splice(postIndexToRemove, 1);
     this.savePosts();
     this.emitPosts();
