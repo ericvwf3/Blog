@@ -1,5 +1,10 @@
 export class Post {
-    contenu : string;
-    constructor(public title: string, public author: string) {
+
+    loveIts = 0;
+    created_at = Date();
+
+    constructor(public title: string, public content: string) {
+        
     }
 }
+

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
 import { Post } from '../models/post.model';
+import { Subject } from 'rxjs';
 import * as firebase from 'firebase';
 import Datasnapshot = firebase.database.DataSnapshot;
 
@@ -32,25 +32,25 @@ export class PostsService {
       }
     );
   }
+    
 
   createNewPost(newPost: Post) {
     this.posts.push(newPost);
     this.savePosts();
-    this.emitPosts;
+    this.emitPosts();
   }
 
-  removePost(post: Post) {
-    const postIndexToremove = this.posts.findIndex(
-      (postE1)  => {
-        if(postE1 === post) {
+  removePost(post: Post) {    
+    const postIndexToRemove = this.posts.findIndex(
+      (postEl) => {
+        if( postEl === post) {
           return true;
         }
       }
     );
-    this.posts.splice(postIndexToremove, 1);
+    this.posts.splice(postIndexToRemove, 1);
     this.savePosts();
     this.emitPosts();
   }
-
   
 }
