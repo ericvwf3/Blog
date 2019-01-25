@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
 import { Post } from '../models/post.model';
+import { Subject } from 'rxjs';
 import * as firebase from 'firebase';
 import Datasnapshot = firebase.database.DataSnapshot;
 
@@ -32,39 +32,26 @@ export class PostsService {
       }
     );
   }
-
-  getSinglePost(id: number) {
-    return new Promise(
-      (resolve, reject) => {
-        firebase.database().ref('/posts/' + id).once('value').then(
-          (data: Datasnapshot) => {
-            resolve(data.val());
-          }, (error) => {
-            reject(error);
-          }
-        );
-      }
-    );
-  }
+    
 
   createNewPost(newPost: Post) {
     this.posts.push(newPost);
     this.savePosts();
-    this.emitPosts;
+    this.emitPosts();
   }
 
-  removePost(post: Post) {
-    const postIndexToremove = this.posts.findIndex(
+  removePost(post: Post) {    
+    const postIndexToRemove = this.posts.findIndex(
       (postEl) => {
         if( postEl === post) {
           return true;
         }
       }
     );
-    this.posts.splice(postIndexToremove, 1);
+    console.log(postIndexToRemove);
+    this.posts.splice(postIndexToRemove, 1);
     this.savePosts();
     this.emitPosts();
   }
-
   
 }
